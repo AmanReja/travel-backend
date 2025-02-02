@@ -19,6 +19,12 @@ router.post("/loginUser", async (req, res) => {
 router.post("/signupUser", async (req, res) => {
   const { useremail, userpass, fullname } = req.body;
 
+  const user = await userSchema.findOne({ useremail });
+
+  if (user) {
+    res.status(400).json("user already exist");
+  }
+
   try {
     const data = new userSchema({
       useremail,
