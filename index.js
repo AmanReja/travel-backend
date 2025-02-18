@@ -36,6 +36,9 @@ try {
 const user_controller = require("./Controllers/user_controller");
 app.use("/user", user_controller);
 
+const teacher_controller = require("./Controllers/teacher_controller");
+app.use("/teacher", teacher_controller);
+
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });
