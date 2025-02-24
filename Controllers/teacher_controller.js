@@ -14,11 +14,7 @@ router.post("/verifyOtp", async (req, res) => {
       otpnumber: otpnumber
     });
 
-    if (otpData) {
-      res.status(200).json({ message: "OTP verified successfully" });
-    } else {
-      res.status(400).json({ message: "Invalid OTP" });
-    }
+    res.status(200).json(otpData);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
