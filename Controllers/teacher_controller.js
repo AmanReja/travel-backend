@@ -9,7 +9,7 @@ router.post("/verifyOtp", async (req, res) => {
   const { teacheremail, otpnumber } = req.body;
 
   try {
-    const otpData = await otpSchema.find({
+    const otpData = await otpSchema.findOne({
       teacheremail: teacheremail,
       otpnumber: otpnumber
     });
